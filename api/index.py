@@ -47,11 +47,11 @@ class HousePredictionRequest(BaseModel):
 class HousePredictionResponse(BaseModel):
     predicted_price: float
 
-@app.get("/")
+@app.get("/api")
 def read_root():
     return {"message": "Welcome to the Navi Mumbai House Price Prediction API!"}
 
-@app.post("/predict", response_model=HousePredictionResponse)
+@app.post("/api/predict", response_model=HousePredictionResponse)
 def predict_price(request: HousePredictionRequest):
     if model is None:
         raise HTTPException(status_code=500, detail="Machine learning model is not loaded/available.")
