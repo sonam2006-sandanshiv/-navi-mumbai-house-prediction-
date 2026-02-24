@@ -14,5 +14,5 @@ env/
 .env.local
 .DS_Store
 Thumbs.db
-*.pkl
+# *.pkl
 *.log
